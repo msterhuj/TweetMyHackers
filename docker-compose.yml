@@ -1,0 +1,10 @@
+version: "3.3"
+
+services:
+
+  cowrie:
+    image: cowrie/cowrie
+    ports:
+     - "2222:2222"
+    volumes:
+      - "./log.json:/cowrie/cowrie-git/var/log/cowrie/cowrie.json"

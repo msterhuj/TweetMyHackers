@@ -1,0 +1,21 @@
+{
+  "name": "tweetmyhackers",
+  "version": "1.0.0",
+  "description": "SSH Honey Pot tweet connection info",
+  "main": "index.js",
+  "scripts": {
+    "setup": "touch log.json",
+    "run": "docker-compose up -d && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msterhuj/TweetMyHackers"
+  },
+  "keywords": [
+    "ssh",
+    "honey pot",
+    "twitter"
+  ],
+  "author": "MsterHuj",
+  "license": "ISC"
+}
