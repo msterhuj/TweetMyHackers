@@ -32,5 +32,14 @@ class database {
         })
     }
 
+    updateCredentials(ip, user, pass) {
+        this.manager().findOne({ip: ip}, (err, result) => {
+            if (!err && result) {
+                this.manager().updateOne({ip: ip}, {$set: {user: user, pass: pass}});
+                console.log("Updated with credential this ip -> " + result.ip);
+            }
+        })
+    }
+
 }
 module.exports.mongo = database;

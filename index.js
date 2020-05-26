@@ -25,7 +25,7 @@ function execute() {
                 // delete hacker and tweet !
                 break;
             case "cowrie.login.success":
-                mongo.update()
+                mongo.updateCredentials(data.src_ip, data.username, data.password)
                 break;
             case "cowrie.login.failed":
                 // what is possible ?
