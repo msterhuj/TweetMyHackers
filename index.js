@@ -23,6 +23,7 @@ function execute() {
                 break;
             case "cowrie.session.closed":
                 // delete hacker and tweet !
+                mongo.finish(data.src_ip, data.duration)
                 break;
             case "cowrie.login.success":
                 mongo.updateCredentials(data.src_ip, data.username, data.password)

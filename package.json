@@ -19,7 +19,9 @@
   "author": "MsterHuj",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.15",
     "mongodb": "^3.5.7",
     "tailing-stream": "^0.2.0",
+    "twitter": "^1.7.1"
   }
 }

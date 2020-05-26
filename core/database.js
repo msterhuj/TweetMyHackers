@@ -51,5 +51,19 @@ class database {
         })
     }
 
+    finish(ip, duration) {
+        this.manager().findOne({ip: ip}, (err, result) => {
+            if (!err && result) {
+                var hacker = result
+                hacker.sessionTime = duration;
+                this.manager().removeOne({ip: ip}, (err, result) => {})
+                this.tweetIt(hacker)
+            }
+        })
+    }
+
+    tweetIt(hacker) {
+        console.log(hacker)
+    }
 }
 module.exports.mongo = database;
