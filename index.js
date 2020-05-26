@@ -32,6 +32,7 @@ function execute() {
                 break;
             case "cowrie.command.input":
                 // count number of commands
+                mongo.runnedCommands(data.src_ip)
                 break;
             default:
                 console.log("Other Events");

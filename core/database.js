@@ -41,5 +41,15 @@ class database {
         })
     }
 
+    runnedCommands(ip) {
+        this.manager().findOne({ip: ip}, (err, result) => {
+            if (!err && result) {
+                var next = result.commandsCounter + 1;
+                this.manager().updateOne({ip: ip}, {$set: {commandsCounter: next}});
+                console.log("Updated command counter for this ip -> " + result.ip);
+            }
+        })
+    }
+
 }
 module.exports.mongo = database;
