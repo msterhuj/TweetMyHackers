@@ -8,3 +8,18 @@ services:
      - "2222:2222"
     volumes:
       - "./log.json:/cowrie/cowrie-git/var/log/cowrie/cowrie.json"
+
+    mongo:
+      image: mongo
+      ports:
+        - "27017:27017"
+      volumes:
+        - "./data:/data/db"
+    webui:
+      image: mongo-express
+      depends_on:
+        - mongo
+      ports:
+        - "8081:8081"
+      environment:
+        - "ME_CONFIG_MONGODB_SERVER=mongo"
