@@ -17,5 +17,9 @@
     "twitter"
   ],
   "author": "MsterHuj",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.5.7",
+    "tailing-stream": "^0.2.0",
+  }
 }
